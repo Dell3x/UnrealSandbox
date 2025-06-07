@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "USCharacter.generated.h"
 
+class USpringArmComponent;
+class UCameraComponent;
+
 UCLASS()
 class UNREALSANBOX_API AUSCharacter : public ACharacter
 {
@@ -16,10 +19,20 @@ public:
 	AUSCharacter();
 
 protected:
-	// Called when the game starts or when spawned
+
+	UPROPERTY(VisibleAnywhere)
+	USpringArmComponent* SpringArmComp;
+	
+	UPROPERTY(VisibleAnywhere)
+	UCameraComponent* CameraComp;
+
+	
+	// Called when the game starts or when spawne
 	virtual void BeginPlay() override;
 
-public:	
+	void MoveForward(float Value);
+
+public:			
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
