@@ -6,6 +6,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "USInteractionComponent.h"
 
 // Sets default values
 AUSCharacter::AUSCharacter()
@@ -17,6 +18,8 @@ AUSCharacter::AUSCharacter()
 	SpringArmComp->bUsePawnControlRotation = true;
 	CameraComp = CreateDefaultSubobject<UCameraComponent>("CameraComp");
 	CameraComp->SetupAttachment(SpringArmComp);
+
+	InteractionComp = CreateDefaultSubobject<UUSInteractionComponent>("InteractionComp");
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	bUseControllerRotationYaw = false;
@@ -37,16 +40,7 @@ void AUSCharacter::Tick(float DeltaTime)
 
 }
 
-void AUSCharacter::PrimaryAttack()
-{
-	FVector HandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
-	
-	FTransform SpawnTM = FTransform(GetControlRotation(), HandLocation);
-	FActorSpawnParameters SpawnParams;
-	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	
-	GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
-}
+
 
 // Called to bind functionality to input
 void AUSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -59,6 +53,7 @@ void AUSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAction("PrimaryAttack", IE_Pressed, this, &AUSCharacter::PrimaryAttack);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AUSCharacter::Jump);
+	PlayerInputComponent->BindAction("PrimaryInteract", IE_Pressed, this, &AUSCharacter::PrimaryInteract);
 
 }
 
@@ -84,8 +79,28 @@ void AUSCharacter::MoveRight(float Value)
 
 void AUSCharacter::Jump()
 {
-	// GetCharacterMovement()->JumpZVelocity = 300.0f;
-	// GetCharacterMovement()->AirControl = 0.2f;
 	GetCharacterMovement()->DoJump(false);
 }
 
+void AUSCharacter::PrimaryAttack()
+{
+	FVector HandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
+	
+	FTransform SpawnTM = FTransform(GetControlRotation(), HandLocation);
+	FActorSpawnParameters SpawnParams;
+	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	
+	GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
+}
+
+void AUSCharacter::PrimaryInteract()
+{
+	if (InteractionComp == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("InteractionComp is null in PrimaryInteract()!"));
+		return;
+	}
+
+	
+	InteractionComp->PrimaryInteraction();
+}

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "USInteractionComponent.h"
 #include "GameFramework/Character.h"
 #include "USCharacter.generated.h"
 
@@ -29,19 +30,23 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AActor> ProjectileClass;
 
-
+	UPROPERTY(VisibleAnywhere)
+	UUSInteractionComponent* InteractionComp;
+	
 	// Called when the game starts or when spawne
 	virtual void BeginPlay() override;
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void Jump();
+	
+	void PrimaryAttack();
+	
+	void PrimaryInteract();
 
 public:			
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	void PrimaryAttack();
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
