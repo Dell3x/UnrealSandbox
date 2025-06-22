@@ -26,20 +26,28 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* CameraComp;
-
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<AActor> ProjectileClass;
-
+	
 	UPROPERTY(VisibleAnywhere)
 	UUSInteractionComponent* InteractionComp;
+
+protected:
+	UPROPERTY(EditAnywhere, Category="Attack")
+	UAnimMontage* AttackMontage;
 	
+	UPROPERTY(EditAnywhere, Category="Attack")
+	TSubclassOf<AActor> ProjectileClass;
+	
+	FTimerHandle TimerHandler_PrimaryAttack;
+
+
 	// Called when the game starts or when spawne
 	virtual void BeginPlay() override;
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void Jump();
-	
+
+	void PrimaryAttack_TimeElapsed();
 	void PrimaryAttack();
 	
 	void PrimaryInteract();

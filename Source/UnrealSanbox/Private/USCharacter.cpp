@@ -29,7 +29,6 @@ AUSCharacter::AUSCharacter()
 void AUSCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 
@@ -39,8 +38,6 @@ void AUSCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
-
 
 // Called to bind functionality to input
 void AUSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -82,7 +79,15 @@ void AUSCharacter::Jump()
 	GetCharacterMovement()->DoJump(false);
 }
 
+
+
 void AUSCharacter::PrimaryAttack()
+{
+	PlayAnimMontage(AttackMontage);
+	GetWorldTimerManager().SetTimer(TimerHandler_PrimaryAttack, this,&AUSCharacter::PrimaryAttack_TimeElapsed, 0.2f);
+}
+
+void AUSCharacter::PrimaryAttack_TimeElapsed()
 {
 	FVector HandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
 	

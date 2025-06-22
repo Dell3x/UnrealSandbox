@@ -65,6 +65,7 @@ void UUSInteractionComponent::PrimaryInteraction()
 
 		if (HitActor)
 		{
+			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, Radius, 16, CollisionColor, false, 2.0f);
 			if (HitActor->Implements<UUSGameplayInterface>())
 			{
 				APawn* Mypawn = Cast<APawn>(HitActor);
@@ -72,7 +73,6 @@ void UUSInteractionComponent::PrimaryInteraction()
 				break;
 			}
 		}
-		DrawDebugSphere(GetWorld(), Hit.ImpactPoint, Radius, 16, CollisionColor, false, 2.0f);
 	}
 	
 	DrawDebugLine(GetWorld(), EyeLocation, End, CollisionColor, false, 2.0f, 0,2.0f);
