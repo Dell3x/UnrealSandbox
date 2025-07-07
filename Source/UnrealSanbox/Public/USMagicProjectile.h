@@ -16,14 +16,15 @@ class UNREALSANBOX_API AUSMagicProjectile : public AActor
 public:
 	// Sets default values for this character's properties
 	AUSMagicProjectile();
+	virtual void PostInitializeComponents() override;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	USphereComponent* SphereComp;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UProjectileMovementComponent* ProjectileComp;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UParticleSystemComponent* ParticleComp;
 
 protected:

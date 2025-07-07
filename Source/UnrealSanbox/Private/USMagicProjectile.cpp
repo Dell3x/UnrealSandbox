@@ -23,8 +23,19 @@ AUSMagicProjectile::AUSMagicProjectile()
 	ProjectileComp->InitialSpeed = 1000.0f;
 	ProjectileComp->bRotationFollowsVelocity = true;
 	ProjectileComp->bInitialVelocityInLocalSpace = true;
-
 }
+
+void AUSMagicProjectile::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+    
+	// if (APawn* ProjectileInstigator = GetInstigator())
+	// {
+	// 	SphereComp->IgnoreActorWhenMoving(ProjectileInstigator,true);
+	// 	ProjectileInstigator->MoveIgnoreActorAdd(this);
+	// }
+}
+
 
 // Called when the game starts or when spawned
 void AUSMagicProjectile::BeginPlay()
@@ -37,5 +48,4 @@ void AUSMagicProjectile::BeginPlay()
 void AUSMagicProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
