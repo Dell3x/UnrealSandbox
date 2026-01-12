@@ -29,11 +29,11 @@ void AUSMagicProjectile::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
     
-	// if (APawn* ProjectileInstigator = GetInstigator())
-	// {
-	// 	SphereComp->IgnoreActorWhenMoving(ProjectileInstigator,true);
-	// 	ProjectileInstigator->MoveIgnoreActorAdd(this);
-	// }
+	if (APawn* ProjectileInstigator = GetInstigator())
+	{
+		SphereComp->IgnoreActorWhenMoving(ProjectileInstigator,true);
+		ProjectileInstigator->MoveIgnoreActorAdd(this);
+	}
 }
 
 

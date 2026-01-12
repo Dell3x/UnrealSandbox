@@ -47,6 +47,9 @@ void AUSExplosiveBarrel::PostInitializeComponents()
 void AUSExplosiveBarrel::OnCollisionHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector3d NormalImpulse, const FHitResult& Hit)
 {
 	RadialForceComp->FireImpulse();
+
+	UE_LOG(LogTemp, Log, TEXT("OnHit in Explosive Barrel %s, at game time %f"), *GetNameSafe(OtherActor), GetWorld()->TimeSeconds);
+	DrawDebugString(GetWorld(), Hit.ImpactPoint, FString("BOOM!"), nullptr, FColor::White, 2.0f, true);
 }
 
 

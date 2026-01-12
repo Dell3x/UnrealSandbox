@@ -1,0 +1,122 @@
+[
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Private\\USCharacter.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Private\\USExplosiveBarrel.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Private\\USGameplayInterface.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Private\\USInteractionComponent.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Private\\USItemChest.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Private\\USMagicProjectile.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Public\\USCharacter.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Public\\USExplosiveBarrel.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Public\\USGameplayInterface.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Public\\USInteractionComponent.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Public\\USItemChest.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\Public\\USMagicProjectile.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\UnrealSanbox.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\UnrealSanbox.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\Source\\UnrealSanbox\\UnrealSanbox.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\Dellex\\GameDev\\UnrealSandbox\\.vscode\\compileCommands_Default\\UnrealSanbox.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Source"
+	}
+]

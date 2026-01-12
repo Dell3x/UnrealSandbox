@@ -36,20 +36,26 @@ protected:
 	
 	UPROPERTY(EditAnywhere, Category="Attack")
 	TSubclassOf<AActor> ProjectileClass;
+
+	UPROPERTY(EditAnywhere, Category = "Attack")
+	TSubclassOf<AActor> BlackHoleProjectileClass;
 	
 	FTimerHandle TimerHandler_PrimaryAttack;
-
-
-	// Called when the game starts or when spawne
-	virtual void BeginPlay() override;
+	FTimerHandle TimerHandler_BlackholeAttack;
+	
+	float AnimAttackDelay;
+	
 
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void Jump();
 
+	void SpawnProjectile(TSubclassOf<AActor> Class);
 	void PrimaryAttack_TimeElapsed();
+	void BlackHoleAttack_TimeElapsed();
 	void PrimaryAttack();
-	
+	void BlackHoleAttack();
+
 	void PrimaryInteract();
 
 public:			
