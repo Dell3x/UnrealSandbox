@@ -6,33 +6,24 @@
 #include "Components/SphereComponent.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "USProjectileBase.h"
 #include "USMagicProjectile.generated.h"
 
 UCLASS()
-class UNREALSANBOX_API AUSMagicProjectile : public AActor
+class UNREALSANBOX_API AUSMagicProjectile : public AUSProjectileBase 
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
 	AUSMagicProjectile();
 	virtual void PostInitializeComponents() override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	USphereComponent* SphereComp;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	UProjectileMovementComponent* ProjectileComp;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	UParticleSystemComponent* ParticleComp;
-
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditDefaultsOnly, Category = "Damage")
+	float DamageAmount;
+
+	UFUNCTION()
+	void OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 };

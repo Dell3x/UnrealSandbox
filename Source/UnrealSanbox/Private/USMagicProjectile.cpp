@@ -8,21 +8,10 @@
 // Sets default values
 AUSMagicProjectile::AUSMagicProjectile()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+ 	SphereComp->SetSphereRadius(20.0f);
+	SphereComp->OnComponentBeginOverlap.AddDynamic(this, &AUSMagicProjectile::OnActorOverlap);
 
-	SphereComp = CreateDefaultSubobject<USphereComponent>(FName("SphereComp"));
-	SphereComp->SetCollisionObjectType(ECC_WorldDynamic);
-	SphereComp->SetCollisionProfileName("Projectile");
-	RootComponent = SphereComp;
-
-	ParticleComp = CreateDefaultSubobject<UParticleSystemComponent>(FName("ParticleComp"));
-	ParticleComp->SetupAttachment(SphereComp);
-
-	ProjectileComp = CreateDefaultSubobject<UProjectileMovementComponent>(FName("ProjectileComp"));
-	ProjectileComp->InitialSpeed = 1000.0f;
-	ProjectileComp->bRotationFollowsVelocity = true;
-	ProjectileComp->bInitialVelocityInLocalSpace = true;
+	DamageAmount = 20.0f;
 }
 
 void AUSMagicProjectile::PostInitializeComponents()
@@ -36,16 +25,20 @@ void AUSMagicProjectile::PostInitializeComponents()
 	}
 }
 
-
-// Called when the game starts or when spawned
-void AUSMagicProjectile::BeginPlay()
+void AUSMagicProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	Super::BeginPlay();
-	
+	// if (OtherActor && OtherActor != GetInstigator())
+	// {
+	// 	USAttributeComponent* AttributeComp = Cast<USAttributeComponent>(OtherActor->GetComponentByClass(USAttributeComponent::StaticClass()));
+	// 	if (AttributeComp)
+	// 	{
+	// 		// minus in front of DamageAmount to apply the change as damage, not healing
+	// 		// AttributeComp->ApplyHealthChange(-DamageAmount);
+			
+	// 		// Only explode when we hit something valid
+	// 		Explode();
+	// 	}
+	// }
 }
 
-// Called every frame
-void AUSMagicProjectile::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
+

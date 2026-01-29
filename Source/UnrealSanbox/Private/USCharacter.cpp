@@ -44,6 +44,7 @@ void AUSCharacter::SetupPlayerInputComponent(UInputComponent *PlayerInputCompone
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAction("PrimaryAttack", IE_Pressed, this, &AUSCharacter::PrimaryAttack);
 	PlayerInputComponent->BindAction("SecondaryAttack", IE_Pressed, this, &AUSCharacter::BlackHoleAttack);
+	PlayerInputComponent->BindAction("DashAttack", IE_Pressed, this, &AUSCharacter::DashAttack);
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &AUSCharacter::Jump);
 	PlayerInputComponent->BindAction("PrimaryInteract", IE_Pressed, this, &AUSCharacter::PrimaryInteract);
 }
@@ -94,6 +95,18 @@ void AUSCharacter::BlackHoleAttack()
 void AUSCharacter::BlackHoleAttack_TimeElapsed()
 {
 	SpawnProjectile(BlackHoleProjectileClass);
+}
+
+void AUSCharacter::DashAttack()
+{
+	PlayAnimMontage(AttackMontage);
+	GetWorldTimerManager().SetTimer(TimerHandler_DashAttack, this, &AUSCharacter::DashAttack_TimeElapsed, AnimAttackDelay);
+}
+
+void AUSCharacter::DashAttack_TimeElapsed()
+{
+	// Assuming you have a DashProjectileClass defined similar to ProjectileClass and BlackHoleProjectileClass
+	SpawnProjectile(DashProjectileClass);
 }
 
 void AUSCharacter::SpawnProjectile(TSubclassOf<AActor> ClassToSpawn)

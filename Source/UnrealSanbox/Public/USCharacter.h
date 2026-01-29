@@ -39,9 +39,13 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Attack")
 	TSubclassOf<AActor> BlackHoleProjectileClass;
+
+	UPROPERTY(EditAnywhere, Category = "Attack")
+	TSubclassOf<AActor> DashProjectileClass;
 	
 	FTimerHandle TimerHandler_PrimaryAttack;
 	FTimerHandle TimerHandler_BlackholeAttack;
+	FTimerHandle TimerHandler_DashAttack;
 	
 	float AnimAttackDelay;
 	
@@ -53,8 +57,10 @@ protected:
 	void SpawnProjectile(TSubclassOf<AActor> Class);
 	void PrimaryAttack_TimeElapsed();
 	void BlackHoleAttack_TimeElapsed();
+	void DashAttack_TimeElapsed();
 	void PrimaryAttack();
 	void BlackHoleAttack();
+	void DashAttack();
 
 	void PrimaryInteract();
 
